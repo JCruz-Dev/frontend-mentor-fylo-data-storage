@@ -12,7 +12,7 @@
             href="./images/favicon-32x32.png"
         />
         <link
-            href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap"
             rel="stylesheet"
         />
 
@@ -31,27 +31,54 @@
         <link rel="stylesheet" href="./styles/main.css" />
     </head>
     <body>
-        <main>
+        <main class="container">
             <div class="main-content">
                 <div class="company-info">
                     <img src="./images/logo.svg" alt="" srcset="" />
-                    <h1 class="company-title">fylo</h1>
+                </div>
+                <div class="containers-icon">
+                    <div class="icon">
+                        <img src="./images/icon-document.svg" alt="document" />
+                    </div>
+                    <div class="icon">
+                        <img src="./images/icon-folder.svg" alt="document" />
+                    </div>
+                    <div class="icon">
+                        <img src="./images/icon-upload.svg" alt="document" />
+                    </div>
                 </div>
             </div>
             <div class="content-info">
-                <p>
-                    You’ve used 815 GB of your storage 185 GB Left 0 GB 1000 GB
+                <p class="content-info-text">
+                    You’ve used
+                    <span class="content-info-gigabyte">815 GB</span> of your
+                    storage
                 </p>
+                <div class="bar-container">
+                    <div class="bar">
+                        <div class="bar-inside"></div>
+                    </div>
+                    <div class="bar-container-info">
+                        <span>0 GB</span>
+                        <span>1000 GB</span>
+                    </div>
+                </div>
+                <div class="container-info-left">
+                    <p class="info-left-number">
+                        185
+                    </p>
+                    <span class="info-left-text">gb left</span>
+                </div>
             </div>
 
-            <div class="attribution">
+            <!-- <div class="attribution">
                 Challenge by
                 <a
                     href="https://www.frontendmentor.io?ref=challenge"
                     target="_blank"
                     >Frontend Mentor</a
                 >. Coded by <a href="#">Your Name Here</a>.
-            </div>
+            </div> -->
         </main>
         <script src="./app/app.js"></script>
     </body>

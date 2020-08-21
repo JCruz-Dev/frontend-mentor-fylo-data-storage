@@ -19,7 +19,8 @@ body,
 main {
     min-height: 100vh;
 }
-main {
+.container {
+    max-width: 1440px;
     padding-left: rem(24px);
     padding-right: rem(24px);
 }
