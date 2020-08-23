@@ -351,15 +351,26 @@ template {
 html,
 body {
   font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
 }
 
 body {
   font-family: "Raleway", sans-serif;
   color: #fff;
-  background-color: #0c122c;
-  background-image: url(../../images/bg-mobile.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #0c122c url(../../images/bg-mobile.png) center/cover no-repeat;
+}
+
+@media screen and (min-width: 62em) {
+  body {
+    background: #0c122c url(../../images/bg-desktop.svg) left bottom/contain no-repeat;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  body {
+    background: #0c122c url(../../images/bg-desktop.svg) left 450px/contain no-repeat;
+  }
 }
 
 body,
@@ -368,9 +379,21 @@ main {
 }
 
 .container {
-  max-width: 1440px;
   padding-left: 1.71429rem;
   padding-right: 1.71429rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main-content,
@@ -381,10 +404,16 @@ main {
 
 .main-content {
   width: 333px;
-  margin-top: 5rem;
   margin-bottom: 1.25rem;
   padding: 3rem;
   border-top-right-radius: 100px;
+}
+
+@media screen and (min-width: 62em) {
+  .main-content {
+    width: 350px;
+    margin-bottom: 0;
+  }
 }
 
 .main-content .company-info {
@@ -414,10 +443,54 @@ main {
   margin-right: 1.2rem;
 }
 
+.content {
+  position: relative;
+}
+
+@media screen and (min-width: 62em) {
+  .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .content {
+    width: 75%;
+  }
+}
+
 .content-info {
   width: 333px;
   position: relative;
   padding: 1.5rem 3rem 4rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+@media screen and (min-width: 62em) {
+  .content-info {
+    width: 550px;
+    height: 160px;
+    margin-left: 2rem;
+    padding: 0 3rem 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .content-info .information {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .content-info {
+    width: 913px;
+  }
 }
 
 .content-info-text {
@@ -517,6 +590,32 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (min-width: 62em) {
+  .container-info-left {
+    width: 193px;
+    top: -50px;
+    left: 58%;
+  }
+  .container-info-left::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 50px 50px 0;
+    border-color: transparent #fff transparent transparent;
+    position: absolute;
+    top: 65%;
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .container-info-left {
+    left: 680px;
+  }
 }
 
 .container-info-left .info-left-number,

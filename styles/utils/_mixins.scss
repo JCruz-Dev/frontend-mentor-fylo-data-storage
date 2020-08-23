@@ -1,3 +1,27 @@
 @function rem($size) {
     @return $size / $base-size * 1rem;
 }
+$queries: (
+    'x-small': 23.44em,
+    'small': 36em,
+    'medium': 48em,
+    'large': 62em,
+    'x-large': 75em,
+    'xx-large': 120em,
+);
+
+@mixin responsiveQuery($size) {
+    @if map-has-key($queries, $size) {
+        @media screen and (min-width: map-get($queries, $size )) {
+            @content;
+        }
+    } @else if type-of($size) == number and unit($size) == 'px' {
+        @media screen and (min-width: map-get($queries, $size )) {
+            @content;
+        }
+    } @else if type-of($size) == number and unit($size) == 'em' {
+        @media screen and (min-width: $size) {
+            @content;
+        }
+    }
+}
