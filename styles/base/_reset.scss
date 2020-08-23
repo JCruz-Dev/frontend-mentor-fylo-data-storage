@@ -6,21 +6,31 @@
 html,
 body {
     font-size: 14px;
+    transition: all 0.3 ease;
 }
 body {
     font-family: $font-family;
     color: $light;
-    background-color: $very_dark_blue;
-    background-image: url(../../images/bg-mobile.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: $very_dark_blue url(../../images/bg-mobile.png) center/ cover
+        no-repeat;
+    @include responsiveQuery(large) {
+        background: $very_dark_blue url(../../images/bg-desktop.svg) left bottom /
+            contain no-repeat;
+    }
+    @include responsiveQuery(xx-large) {
+        background: $very_dark_blue url(../../images/bg-desktop.svg) left 450px /
+            contain no-repeat;
+    }
 }
 body,
 main {
     min-height: 100vh;
 }
 .container {
-    max-width: 1440px;
     padding-left: rem(24px);
     padding-right: rem(24px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
